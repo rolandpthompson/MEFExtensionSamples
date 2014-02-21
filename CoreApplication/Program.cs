@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.Composition.Hosting;
+using System.IO;
 
 namespace CoreApplication
 {
@@ -33,12 +30,25 @@ namespace CoreApplication
             }
 
             var i = 0;
-            foreach (var extraction in bootStrapper.TextExtraction)
+
+            DirectoryInfo dInfo = new DirectoryInfo(@"c:\working");
+            FileInfo[] files = dInfo.GetFiles("*.htm");
+
+            foreach (var file in files)
             {
-                Console.WriteLine(extraction.Author);
-                Console.WriteLine(extraction.ExtractedText()
-                i++;
+                StreamReader sr = new StreamReader(file.FullName);
+
+                var text = sr.ReadToEnd();
+                foreach (var extraction in bootStrapper.TextExtraction)
+                {
+                    Console.WriteLine(extraction.Author);
+                    Console.WriteLine(extraction.ExtractedText(text));
+                    i++;
+                }
             }
+
+            Console.WriteLine("Finished");
+            Console.ReadLine();
 
         }
     }
