@@ -10,19 +10,22 @@ namespace CoreApplication
         static void Main(string[] args)
         {
 
-            var bootStrapper = new BootStrapper();
-
+            var plugins = new PluginStrapper();
             var catalog = new AggregateCatalog();
+            var extensionPath = Path.Combine(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetAssembly(typeof(Program)).Location), "Plugins");
 
-            var extensionPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetAssembly(typeof(Program)).Location) ?? "./Extensions";
-
+            // check if directory exists...
+            DirectoryInfo dInfo = new DirectoryInfo(extensionPath);
+            if (!dInfo.Exists)
+                dInfo.Create();
+            
             catalog.Catalogs.Add(new DirectoryCatalog(extensionPath));
 
             var container = new CompositionContainer(catalog);
 
             try
             {
-                container.ComposeParts(bootStrapper);
+                container.ComposeParts(plugins);
             }
             catch (CompositionException ex)
             {
@@ -31,7 +34,7 @@ namespace CoreApplication
 
             var i = 0;
 
-            DirectoryInfo dInfo = new DirectoryInfo(@"c:\working");
+            dInfo = new DirectoryInfo(@"c:\working");
             FileInfo[] files = dInfo.GetFiles("*.htm");
 
             foreach (var file in files)
@@ -39,9 +42,9 @@ namespace CoreApplication
                 StreamReader sr = new StreamReader(file.FullName);
 
                 var text = sr.ReadToEnd();
-                foreach (var extraction in bootStrapper.TextExtraction)
+                foreach (var extraction in plugins.TextExtraction)
                 {
-                    Console.WriteLine(extraction.Author);
+                    //Console.WriteLine(extraction.Author);
                     Console.WriteLine(extraction.ExtractedText(text));
                     i++;
                 }

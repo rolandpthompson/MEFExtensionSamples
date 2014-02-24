@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApplication", "CoreAppl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApplication.Extensibility", "CoreApplication.Extensibility\CoreApplication.Extensibility.csproj", "{A152E6C3-BB0C-4BD1-8C41-09A63E411762}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginTest1", "PluginTest1\PluginTest1.csproj", "{AABA842D-8A43-4B49-B0AD-615BBB0350B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginTest2", "PluginTest2\PluginTest2.csproj", "{F14D03D7-E76A-43FB-8E71-2D5A51EA8BFC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{A152E6C3-BB0C-4BD1-8C41-09A63E411762}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A152E6C3-BB0C-4BD1-8C41-09A63E411762}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A152E6C3-BB0C-4BD1-8C41-09A63E411762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AABA842D-8A43-4B49-B0AD-615BBB0350B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AABA842D-8A43-4B49-B0AD-615BBB0350B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AABA842D-8A43-4B49-B0AD-615BBB0350B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AABA842D-8A43-4B49-B0AD-615BBB0350B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F14D03D7-E76A-43FB-8E71-2D5A51EA8BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F14D03D7-E76A-43FB-8E71-2D5A51EA8BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F14D03D7-E76A-43FB-8E71-2D5A51EA8BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F14D03D7-E76A-43FB-8E71-2D5A51EA8BFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

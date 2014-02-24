@@ -4,7 +4,7 @@ using System.ComponentModel.Composition;
 
 namespace CoreApplication
 {
-    public class BootStrapper
+    public class PluginStrapper
     {
 
         [ImportMany]
